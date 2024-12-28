@@ -19,14 +19,12 @@ let titleProject = prompt('Название проекта');
 let screensValue = prompt('Шаблонные, с уникальным дизайном, с анимациями');
 let responsive = confirm('Нужен ли респонсивный сайт?');
 
-// Запрашиваем стоимость экрана
 let screenPrice = getPriceInput('Сколько это будет стоить для экрана?');
 if (screenPrice === null) {
     console.log('Отмена операции.');
     throw new Error('Операция прервана пользователем.');
 }
 
-// Запрашиваем стоимость всех услуг
 const getAllServicePrices = function (servicesCount) {
     let total = 0;
     for (let i = 1; i <= servicesCount; i++) {
@@ -43,11 +41,9 @@ if (totalServicePrice === null) {
     throw new Error('Операция прервана пользователем.');
 }
 
-// Полная стоимость
 let fullPrice = screenPrice + totalServicePrice;
 console.log('Полная стоимость:', fullPrice);
 
-// Стоимость с учетом процента подрядчику
 const getServicePercentPrices = function () {
     return fullPrice - fullPrice * 0.1;
 };
@@ -55,7 +51,6 @@ const getServicePercentPrices = function () {
 let servicePercentPrices = getServicePercentPrices();
 console.log('Стоимость за вычетом процента подрядчику:', servicePercentPrices);
 
-// Сообщение о скидке
 const getRollbackMessage = function () {
     if (fullPrice > 50000) {
         console.log('Сделаем скидку в 10%');
@@ -69,7 +64,6 @@ const getRollbackMessage = function () {
 };
 getRollbackMessage();
 
-// Преобразование заголовка
 const getTitle = function (title) {
     return title[0].toUpperCase() + title.substr(1).toLowerCase();
 };
