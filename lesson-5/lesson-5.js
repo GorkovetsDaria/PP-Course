@@ -2,7 +2,7 @@ let screenPrice = 2000;
 
 let titleProject = prompt('Название проекта');
 let screensValue = prompt('Шаблонные, с уникальным дизайном, с анимациями');
-let responsive = Boolean(prompt('Нужен ли респонсивный сайт?'));
+let responsive = confirm(prompt('Нужен ли респонсивный сайт?'));
 let service1 = prompt('Какой сервис нужен?');
 let servicePrice1 = +prompt('Сколько это будет стоить');
 let service2 = prompt('Какой еще сервис тебе нужен?');
